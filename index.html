@@ -1,0 +1,215 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Bersama Teknik Ac</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+  
+  <body>
+    <header>
+  <nav x-data="{ open: false }"  class="flex h-auto w-auto max-w-5xl bg-white shadow-lg mx-auto rounded-lg justify-between
+      md:h-16">
+      <div class="flex w-full justify-between ">
+          <div :class="open ? 'hidden':'flex'" 
+          class="flex px-6 w-1/2 items-center font-semibold
+          md:w-1/5 md:px-1 md:flex md:items-center md:justify-center"
+          x-transition:enter="transition ease-out duration-300">
+              <a href=""><img src="/images/logo250.png" alt="" width="250" height="60"></a>
+          </div>
+
+          <div  
+          x-show="open" x-transition:enter="transition ease-in-out duration-300"
+          class="flex flex-col w-full h-auto
+          md:hidden">
+              <div class="flex flex-col items-center justify-center gap-2">
+                  <a href="/#top">Home</a>
+                  <a href="/#about">Tentang Kami</a>
+                  <a href="/#service">Layanan Kami</a>
+                  <a href="">Contact</a>
+              </div>
+          </div>
+          <div class="hidden w-3/5 items-center justify-evenly font-semibold
+          md:flex">
+        <a href="/#top">Home</a>
+        <a href="/#about">Tentang Kami</a>
+        <a href="/#service">Layanan Kami</a>
+        <a href="">Contact</a>
+          </div>
+          <button class="text-gray-500 w-10 h-10 relative focus:outline-none bg-white
+                          md:hidden
+                        " @click="open = !open">
+              <span class="sr-only">Open main menu</span>
+              <div class="block w-5 absolute left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2">
+                  <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+                  <span aria-hidden="true" class="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
+                  <span aria-hidden="true" class="block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+              </div>
+          </button>
+      </div>
+  </nav>
+</header>
+<!-- component -->
+<!-- This is an example component -->
+<div class="max-w-2xl md:max-w-full">
+
+	<div id="default-carousel" class="relative" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 lg:h-[100vh]">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                <img src="/images/1.jpeg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/2.jpeg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/3.jpeg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="hidden">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="hidden">Next</span>
+            </span>
+        </button>
+    </div>
+
+</div>
+<div class="bg-gradient-to-r from-green-600 to-teal-300 py-8 max-md:p-4">
+    <div class="w-auto max-w-5xl mx-auto text-white flex flex-col md:flex-row justify-between">
+        <div>
+        <h2 class="text-2xl font-semibold font-[Nunito]">Konsultasi dan Pemesanan</h2>
+        <p>Silahkan hubungi kami via Whatsapp / Telepon</p>
+       </div>
+       <div>
+        <button class="border mt-4 p-2 rounded-lg hover:bg-slate-50 hover:text-orange-700">Whatsapp</button>
+       </div>
+
+    </div>
+</div>
+ <section id="about" class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto">
+            <div class="items-center md:flex md:space-x-6">
+                <div class="md:w-1/2">
+                    <div class="flex items-center justify-center">
+                        <div class="max-w-lg">
+                            <img class="object-cover object-center w-full rounded-md shadow" style="width:500px; height: 500px;"
+                                src="/images/5.jpeg">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="mt-8 md:mt-0 md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800">Jasa Service AC, Pasang AC, Dan Cuci AC Bersama AC Teknik</h3>
+                    <p class="max-w-md mt-4 text-gray-600">Bersama AC Teknik telah dikenal sebagai penyedia layanan profesional untuk perbaikan dan perawatan AC. Dengan pengalaman dan pengetahuan yang luas dalam industri ini, tim teknisi kami siap membantu Anda mengatasi berbagai masalah AC yang mungkin Anda hadapi.<br /><br />
+
+                    Kami menyediakan layanan perbaikan, pembersihan, penggantian suku cadang, dan pemeliharaan rutin untuk AC di rumah, kantor, atau tempat bisnis Anda. Dengan pendekatan yang terpercaya dan efisien, Bersama AC Teknik bertujuan untuk memberikan solusi yang memadai dan memberikan kenyamanan melalui kinerja optimal AC Anda.<br />
+<br />
+                    Kami berkomitmen untuk kepuasan pelanggan dan menyediakan layanan berkualitas tinggi dengan harga yang kompetitif. Percayakan perbaikan dan perawatan AC Anda kepada Bersama AC Teknik, dan kami akan memberikan pelayanan yang andal dan profesional untuk menjaga AC Anda bekerja dengan baik dalam jangka panjang.
+
+</p>
+                    <a href="#" class="mt-8"><button class="bg-green-700 border text-white cursor-pointer p-2 rounded-lg hover:bg-green-900">Pesan Jasa Service AC</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section id="service" class="bg-white">
+    <div class="max-w-5xl px-6 py-16 mx-auto">
+        <div class="flex flex-col">
+  <div class="-m-1.5 overflow-x-auto">
+    <div class="p-1.5 min-w-full inline-block align-middle">
+      <div class="border rounded-lg overflow-hidden dark:border-neutral-700">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+          <thead class="bg-gray-50 dark:bg-neutral-700">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-400">Pekerjaan</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-400">Harga</th>
+           
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Jasa pasang ac 0,5pk - 1pk</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 250.000</td>
+           
+            </tr>
+
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Jasa pasang ac 1,5pk - 2pk</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 400.000</td>
+           
+            </tr>
+
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Bongkar pasang ac 0,5pk-1pk</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 300.000</td>
+      
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Bongkar pasang ac 1,5pk-2pk</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 450.000</td>
+      
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Cuci AC 0,5 pk - 1 pk </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 70.000</td>
+      
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Cuci AC 1,5 pk - 2 pk </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 85.000</td>
+      
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Tambah Freon R.22 </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 200.000</td>
+      
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Tambah Freon R.32 </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 200.000</td>
+      
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Tambah Freon R.410 </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 200.000</td>
+      
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Isi Freon Full </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Rp. 350.000</td>
+      
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+</section>
+
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
+</html>
